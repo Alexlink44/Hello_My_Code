@@ -165,7 +165,24 @@ void SelectionSort(int[] array)
     }
 }
 
+void SelectionSortReverse(int[] array)
+{
+    for (int i = 0; i < array.Length - 1; i++)
+    {
+        int maxPosition = i;
+
+        for (int j = i + 1; j < array.Length; j++)
+        {
+            if(array[j] > array[maxPosition]) maxPosition = j;
+        }
+        int tempopary = array[i];
+        array[i] = array[maxPosition];
+        array[maxPosition] = tempopary;
+    }
+}
 
 PrintArray(arr);
-SelectionSort(arr);
+// SelectionSort(arr);
+// PrintArray(arr);
+SelectionSortReverse(arr);
 PrintArray(arr);
